@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-08-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="slds-box">
+        <c-child-component name="Mazda CX-5" type="AWD" trim="Grand Touring" model="2022"></c-child-component>
+        <c-child-component name="Mazda CX-9" type="FWD" trim="Touring Plus" model="2019"></c-child-component>
+        <c-child-component name="Toyota Camry" type="AWD" trim="XSE" model="2018"></c-child-component>
+        <template if:true={accountsInfo.data}>
+            <template for:each={accountsInfo.data} for:item="acc">
+                <p key={acc.Id}>
+                    <c-child-component name={acc.Name} ></c-child-component>
+                </p>
+            </template>
+        </template>
+        <template if:true={accountsInfo.error}>
+            {accountsInfo.error}
+        </template>
+    </div>
+</template>
